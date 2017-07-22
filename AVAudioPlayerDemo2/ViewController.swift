@@ -126,15 +126,12 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
         
     }
     
-
-    
     
     //選択がキャンセルされた場合に呼ばれる
     func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
         // ピッカーを閉じ、破棄する
         dismiss(animated: true, completion: nil)
     }
-
 
     // MARK: Playback Rate Changed 速度
 
