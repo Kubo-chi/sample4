@@ -119,7 +119,6 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
 
         } else {
             // urlがnilなので再生できない
-            
             // プレイヤーをnilとする
             audioPlayer0 = nil
             audioPlayer1 = nil
