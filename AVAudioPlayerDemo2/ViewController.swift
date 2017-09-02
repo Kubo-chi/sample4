@@ -108,11 +108,33 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
                 
                 //player0.volume = volumeSlider0.value
                 //player1.volume = volumeSlider1.value
-                //player0.volume=
+
                 
                 // 再生
                 player0.play()
                 player1.play()
+                
+                motionManager.startDeviceMotionUpdates( to: OperationQueue.current!, withHandler:{
+                    deviceManager, error in
+                    
+                    
+                    
+                    
+                    let attitude: CMAttitude = deviceManager!.attitude
+                    if(attitude.pitch>0){
+                    player0.volume = Float(1.0 + attitude.pitch)
+                    player1.volume = Float(1.0 - attitude.pitch)
+                    }else{
+                        player0.volume = Float(1.0 + attitude.pitch)
+                        player1.volume = Float(1.0 - attitude.pitch)
+                    }
+                    
+                })
+
+                
+                
+                
+                
                 
             }
             
