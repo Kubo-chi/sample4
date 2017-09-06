@@ -102,12 +102,11 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
                 player1.enableRate = true
                 
                 // sliderに合わせてrateを変更
-                player0.rate = playbackRateSlider0.value
-                player1.rate = playbackRateSlider1.value
+                //player0.rate = playbackRateSlider0.value
+                //player1.rate = playbackRateSlider1.value
                 motionManager.accelerometerUpdateInterval = 0.1
                 
-                //player0.volume = volumeSlider0.value
-                //player1.volume = volumeSlider1.value
+                
 
                 
                 // 再生
@@ -118,16 +117,25 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
                     deviceManager, error in
                     
                     
-                    
-                    
                     let attitude: CMAttitude = deviceManager!.attitude
                     if(attitude.pitch>0){
-                    player0.volume = Float(1.0 + attitude.pitch)
-                    player1.volume = Float(1.0 - attitude.pitch)
+                    player0.volume = Float(1.0 + attitude.pitch*0.8)
+                    player1.volume = Float(1.0 - attitude.pitch*0.8)
                     }else{
-                        player0.volume = Float(1.0 + attitude.pitch)
-                        player1.volume = Float(1.0 - attitude.pitch)
+                        
+                        player0.volume = Float(1.0 + attitude.pitch*0.8)
+                        player1.volume = Float(1.0 - attitude.pitch*0.8)
+                        
                     }
+                    if(attitude.roll>0){
+                        player0.rate = Float(1.0 + attitude.roll*0.2)
+                        player1.rate = Float(1.0 - attitude.roll*0.2)
+                    }else{
+                        player0.rate = Float(1.0 + attitude.roll*0.2)
+                        player1.rate = Float(1.0 - attitude.roll*0.2)
+                        
+                    }
+                    
                     
                 })
 
