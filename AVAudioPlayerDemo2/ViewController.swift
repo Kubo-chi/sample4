@@ -19,8 +19,8 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
     @IBOutlet weak var songTitleLabel0: UILabel!
     @IBOutlet weak var songTitleLabel1: UILabel!
     //速さ
-    @IBOutlet weak var playbackRateSlider0: UISlider!
-    @IBOutlet weak var playbackRateSlider1: UISlider!
+    //@IBOutlet weak var playbackRateSlider0: UISlider!
+    //@IBOutlet weak var playbackRateSlider1: UISlider!
     
     
     //@IBOutlet weak var volumeSlider0: UISlider!
@@ -39,10 +39,18 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goA" { //SecondViewControllerに遷移する場合
+            // SecondViewControllerをインスタンス化
+            let secondVc = segue.destination as! ViewControllerA
+            // 値を渡す
+            secondVc.a = self.songTitleLabel0.text!
+            secondVc.b = self.songTitleLabel1.text!
+        }
+    }
     
-    
-    
-    @IBAction func pick(_ sender: AnyObject) {
+        @IBAction func pick(_ sender: AnyObject) {
         // MPMediaPickerControllerのインスタンスを作成
         let picker = MPMediaPickerController()
         // ピッカーのデリゲートを設定
@@ -52,6 +60,8 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
         // ピッカーを表示する
         present(picker, animated: true, completion: nil)
     }
+    //この画面に戻って来るとき
+    @IBAction func backToTop(segue: UIStoryboardSegue) {}
     
     // メディアアイテムピッカーでアイテムを選択完了したときに呼び出される
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
@@ -71,8 +81,8 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
             // itemが2個以上ない場合戻る
             
             // 曲目ラベルをデフォルトに戻す
-            songTitleLabel0.text = "曲 1"
-            songTitleLabel1.text = "曲 2"
+            songTitleLabel0.text = "-----"
+            songTitleLabel1.text = "-----"
             
             return
         }
@@ -96,8 +106,7 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
                 // 曲目表示
                 songTitleLabel0.text = item0.title ?? ""
                 songTitleLabel1.text = item1.title ?? ""
-                
-                // 再生レート変更可能にする
+                                // 再生レート変更可能にする
                 player0.enableRate = true
                 player1.enableRate = true
                 
@@ -128,11 +137,13 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
                         
                     }
                     if(attitude.roll>0){
-                        player0.rate = Float(1.0 + attitude.roll*0.2)
+                        //遅くなる
+                        player0.rate = Float(1.0 - attitude.roll*0.2)
                         player1.rate = Float(1.0 - attitude.roll*0.2)
                     }else{
+                        //早くなる
                         player0.rate = Float(1.0 + attitude.roll*0.2)
-                        player1.rate = Float(1.0 - attitude.roll*0.2)
+                        player1.rate = Float(1.0 + attitude.roll*0.2)
                         
                     }
                     
@@ -162,6 +173,7 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
         // ピッカーを閉じ、破棄する
         dismiss(animated: true, completion: nil)
     }
+    
 
     // MARK: Playback Rate Changed 速度
 

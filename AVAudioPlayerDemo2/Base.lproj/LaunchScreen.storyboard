@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="potato.gif" translatesAutoresizingMaskIntoConstraints="NO" id="y0Q-uh-P48">
-                                <rect key="frame" x="53" y="218" width="269" height="230"/>
+                                <rect key="frame" x="53" y="172" width="269" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

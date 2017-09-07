@@ -17,6 +17,11 @@
 		C23BF3C31F03859D00CF92DF /* potato.gif in Resources */ = {isa = PBXBuildFile; fileRef = C23BF3C21F03859D00CF92DF /* potato.gif */; };
 		C23BF3C51F038BFC00CF92DF /* potato20.png in Resources */ = {isa = PBXBuildFile; fileRef = C23BF3C41F038BFC00CF92DF /* potato20.png */; };
 		C23BF3D31F038E4800CF92DF /* potato60_3.png in Resources */ = {isa = PBXBuildFile; fileRef = C23BF3D21F038E4800CF92DF /* potato60_3.png */; };
+		C251DAFE1F5FB89600353CDE /* ViewControllerA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C251DAFD1F5FB89600353CDE /* ViewControllerA.swift */; };
+		C251DB0B1F60C9E100353CDE /* redup.png in Resources */ = {isa = PBXBuildFile; fileRef = C251DB071F60C9E100353CDE /* redup.png */; };
+		C251DB0C1F60C9E100353CDE /* reddown.png in Resources */ = {isa = PBXBuildFile; fileRef = C251DB081F60C9E100353CDE /* reddown.png */; };
+		C251DB0D1F60C9E100353CDE /* greR.png in Resources */ = {isa = PBXBuildFile; fileRef = C251DB091F60C9E100353CDE /* greR.png */; };
+		C251DB0E1F60C9E100353CDE /* greL.png in Resources */ = {isa = PBXBuildFile; fileRef = C251DB0A1F60C9E100353CDE /* greL.png */; };
 		C283ECE61F15EDC3003CB360 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C283ECE51F15EDC3003CB360 /* CoreMotion.framework */; };
 		C2DCB7E21F0C9D1800DB2A4B /* potato20_3.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DCB7E11F0C9D1800DB2A4B /* potato20_3.png */; };
 		C2DCB7E41F0C9D2800DB2A4B /* potatoa40_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DCB7E31F0C9D2800DB2A4B /* potatoa40_2.png */; };
@@ -60,6 +65,11 @@
 		C23BF3C21F03859D00CF92DF /* potato.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = potato.gif; sourceTree = "<group>"; };
 		C23BF3C41F038BFC00CF92DF /* potato20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = potato20.png; sourceTree = "<group>"; };
 		C23BF3D21F038E4800CF92DF /* potato60_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = potato60_3.png; sourceTree = "<group>"; };
+		C251DAFD1F5FB89600353CDE /* ViewControllerA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerA.swift; sourceTree = "<group>"; };
+		C251DB071F60C9E100353CDE /* redup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redup.png; path = ../../../Desktop/redup.png; sourceTree = "<group>"; };
+		C251DB081F60C9E100353CDE /* reddown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reddown.png; path = ../../../Desktop/reddown.png; sourceTree = "<group>"; };
+		C251DB091F60C9E100353CDE /* greR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greR.png; path = ../../../Desktop/greR.png; sourceTree = "<group>"; };
+		C251DB0A1F60C9E100353CDE /* greL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greL.png; path = ../../../Desktop/greL.png; sourceTree = "<group>"; };
 		C283ECE51F15EDC3003CB360 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		C2DCB7E11F0C9D1800DB2A4B /* potato20_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = potato20_3.png; path = Assets.xcassets/AppIcon.appiconset/potato20_3.png; sourceTree = "<group>"; };
 		C2DCB7E31F0C9D2800DB2A4B /* potatoa40_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = potatoa40_2.png; path = Assets.xcassets/AppIcon.appiconset/potatoa40_2.png; sourceTree = "<group>"; };
@@ -121,6 +131,7 @@
 			children = (
 				59A4CDCF1BAE41B500253FAC /* AppDelegate.swift */,
 				59A4CDD11BAE41B500253FAC /* ViewController.swift */,
+				C251DAFD1F5FB89600353CDE /* ViewControllerA.swift */,
 				59A4CDD31BAE41B500253FAC /* Main.storyboard */,
 				59A4CDD61BAE41B500253FAC /* Assets.xcassets */,
 				C23BF3C41F038BFC00CF92DF /* potato20.png */,
@@ -132,6 +143,10 @@
 				C2DCB7FB1F0CA2B000DB2A4B /* potatoa60_2.png */,
 				C23BF3D21F038E4800CF92DF /* potato60_3.png */,
 				C23BF3C21F03859D00CF92DF /* potato.gif */,
+				C251DB071F60C9E100353CDE /* redup.png */,
+				C251DB081F60C9E100353CDE /* reddown.png */,
+				C251DB091F60C9E100353CDE /* greR.png */,
+				C251DB0A1F60C9E100353CDE /* greL.png */,
 				59A4CDD81BAE41B500253FAC /* LaunchScreen.storyboard */,
 				59A4CDDB1BAE41B500253FAC /* Info.plist */,
 			);
@@ -276,11 +291,15 @@
 				C23BF3C51F038BFC00CF92DF /* potato20.png in Resources */,
 				59A4CDDA1BAE41B500253FAC /* LaunchScreen.storyboard in Resources */,
 				C23BF3C31F03859D00CF92DF /* potato.gif in Resources */,
+				C251DB0E1F60C9E100353CDE /* greL.png in Resources */,
+				C251DB0B1F60C9E100353CDE /* redup.png in Resources */,
 				C2DCB7F81F0CA28700DB2A4B /* potato29_3.png in Resources */,
 				C2DCB7FC1F0CA2B000DB2A4B /* potatoa60_2.png in Resources */,
 				C2DCB7E21F0C9D1800DB2A4B /* potato20_3.png in Resources */,
 				59A4CDD71BAE41B500253FAC /* Assets.xcassets in Resources */,
 				C23BF3D31F038E4800CF92DF /* potato60_3.png in Resources */,
+				C251DB0D1F60C9E100353CDE /* greR.png in Resources */,
+				C251DB0C1F60C9E100353CDE /* reddown.png in Resources */,
 				C2DCB7FA1F0CA29E00DB2A4B /* potato29_2.png in Resources */,
 				59A4CDD51BAE41B500253FAC /* Main.storyboard in Resources */,
 			);
@@ -308,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59A4CDD21BAE41B500253FAC /* ViewController.swift in Sources */,
+				C251DAFE1F5FB89600353CDE /* ViewControllerA.swift in Sources */,
 				59A4CDD01BAE41B500253FAC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
