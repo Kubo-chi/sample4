@@ -15,6 +15,7 @@ class ViewControllerA: UIViewController {
 @IBOutlet weak var aLabel: UILabel!
 @IBOutlet weak var bLabel: UILabel!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         aLabel.text = a

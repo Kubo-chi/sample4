@@ -15,7 +15,6 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
     var audioPlayer0: AVAudioPlayer?
     var audioPlayer1: AVAudioPlayer?
      var v0,v1: Double?// 0のボリュームと1のボリューム変数
-    //let mag: Double = 20.0//
     @IBOutlet weak var songTitleLabel0: UILabel!
     @IBOutlet weak var songTitleLabel1: UILabel!
     //速さ
