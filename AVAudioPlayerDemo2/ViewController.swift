@@ -150,23 +150,24 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
                     
                     
                     let attitude: CMAttitude = deviceManager!.attitude
-                    if(attitude.pitch>0){//
+                    
+                    if(attitude.pitch>0){
+                        //上
                     player1.volume = Float(1.0 + attitude.pitch*0.8)
                     player0.volume = Float(1.0 - attitude.pitch*0.8)
                     }else{
-                    
+                        //下
                     player1.volume = Float(1.0 + attitude.pitch*0.8)
                     player0.volume = Float(1.0 - attitude.pitch*0.8)
-                        
                     }
-                    if(attitude.roll>0){//右
+                    if(attitude.roll>0){
                         //遅くなる
-                        player0.rate = Float(1.0 - attitude.roll*0.2)
-                        player1.rate = Float(1.0 - attitude.roll*0.2)
-                    }else{//左
+                    player0.rate = Float(1.0 + attitude.roll*0.2)
+                    player1.rate = Float(1.0 - attitude.roll*0.2)
+                    }else{
                         //早くなる
-                        player0.rate = Float(1.0 - attitude.roll*0.2)
-                        player1.rate = Float(1.0 - attitude.roll*0.2)
+                    player0.rate = Float(1.0 + attitude.roll*0.2)
+                    player1.rate = Float(1.0 - attitude.roll*0.2)
                         
                     }
                     
@@ -189,8 +190,17 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
         }
         
     }
-    
-    
+    //
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        if let player0 = audioPlayer0, let player1 = audioPlayer1 {
+            player0.stop()
+            player1.stop()
+        }
+
+        
+        
+            
+        }
     //選択がキャンセルされた場合に呼ばれる
     func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
         // ピッカーを閉じ、破棄する
