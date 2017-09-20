@@ -25,16 +25,42 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
     
     //@IBOutlet weak var volumeSlider0: UISlider!
     //@IBOutlet weak var volumeSlider1: UISlider!
+    @IBOutlet var button :UIButton!
     
+    var count = 0
+    
+    // UIImage のインスタンスを設定
+    let image0:UIImage = UIImage(named:"se1.png")!
+    let image1:UIImage = UIImage(named:"se2.png")!
+    let image2:UIImage = UIImage(named:"se3.png")!
+    let image3:UIImage = UIImage(named:"se4.png")!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
 
     }
 
+    @IBAction func buttonTapped(sender : AnyObject) {
+        count += 1
+        
+        if(count%4 == 0){
+            button.setImage(image0, for: UIControlState())
+        }
+        else if(count%4 == 1){
+            button.setImage(image1, for: UIControlState())
+        }
+        else if(count%4 == 2){
+            button.setImage(image2, for: UIControlState())
+        }
+        else if(count%4 == 3){
+            button.setImage(image3, for: UIControlState())
+        }
+        else{
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

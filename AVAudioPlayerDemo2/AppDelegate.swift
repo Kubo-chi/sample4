@@ -5,7 +5,7 @@
 //  Created by KUWAJIMA MITSURU on 2015/09/20.
 //  Copyright © 2015年 nackpan. All rights reserved.
 //
-
+import AVFoundation
 import UIKit
 
 @UIApplicationMain
@@ -25,8 +25,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        //
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayback)
+        } catch  {
+            // エラー処理
+            fatalError("カテゴリ設定失敗")
+        }
+        
+        // sessionのアクティブ化
+        do {
+            try session.setActive(true)
+        } catch {
+            // audio session有効化失敗時の処理
+            // (ここではエラーとして停止している）
+            fatalError("session有効化失敗")
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
