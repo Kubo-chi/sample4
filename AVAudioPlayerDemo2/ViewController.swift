@@ -18,8 +18,6 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
     @IBOutlet weak var songTitleLabel0: UILabel!
     @IBOutlet weak var songTitleLabel1: UILabel!
     //速さ
-    //@IBOutlet weak var playbackRateSlider0: UISlider!
-    //@IBOutlet weak var playbackRateSlider1: UISlider!
     
     
     //@IBOutlet weak var volumeSlider0: UISlider!
@@ -152,23 +150,23 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
                     
                     
                     let attitude: CMAttitude = deviceManager!.attitude
-                    if(attitude.pitch>0){
-                    player0.volume = Float(1.0 + attitude.pitch*0.8)
-                    player1.volume = Float(1.0 - attitude.pitch*0.8)
+                    if(attitude.pitch>0){//
+                    player1.volume = Float(1.0 + attitude.pitch*0.8)
+                    player0.volume = Float(1.0 - attitude.pitch*0.8)
                     }else{
-                        
-                        player0.volume = Float(1.0 + attitude.pitch*0.8)
-                        player1.volume = Float(1.0 - attitude.pitch*0.8)
+                    
+                    player1.volume = Float(1.0 + attitude.pitch*0.8)
+                    player0.volume = Float(1.0 - attitude.pitch*0.8)
                         
                     }
-                    if(attitude.roll>0){
+                    if(attitude.roll>0){//右
                         //遅くなる
                         player0.rate = Float(1.0 - attitude.roll*0.2)
                         player1.rate = Float(1.0 - attitude.roll*0.2)
-                    }else{
+                    }else{//左
                         //早くなる
-                        player0.rate = Float(1.0 + attitude.roll*0.2)
-                        player1.rate = Float(1.0 + attitude.roll*0.2)
+                        player0.rate = Float(1.0 - attitude.roll*0.2)
+                        player1.rate = Float(1.0 - attitude.roll*0.2)
                         
                     }
                     
@@ -199,7 +197,7 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-
+    
     // MARK: Playback Rate Changed 速度
 
     @IBAction func song0RateValueChanged(_ sender: AnyObject) {
