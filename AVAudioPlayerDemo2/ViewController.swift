@@ -155,6 +155,7 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
                         //上
                     player1.volume = Float(1.0 + attitude.pitch*0.8)
                     player0.volume = Float(1.0 - attitude.pitch*0.8)
+                        
                     }else{
                         //下
                     player1.volume = Float(1.0 + attitude.pitch*0.8)
@@ -170,7 +171,11 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
                     player1.rate = Float(1.0 - attitude.roll*0.2)
                         
                     }
-                    
+                    let accel: CMAcceleration = deviceManager!.userAcceleration
+                    if(fabs(accel.z)>0.05){
+                        player0.rate = Float(1.0 + fabs(accel.z)*0.7)
+                        player1.rate = Float(1.0 + fabs(accel.z)*0.7)
+                    }
                     
                 })
 
