@@ -1,10 +1,4 @@
-//
-//  ViewControllerA.swift
-//  AVAudioPlayerDemo2
-//
-//  Created by 久保 千絃 on 2017/09/06.
-//  Copyright © 2017年 nackpan. All rights reserved.
-//
+
 
 import Foundation
 import UIKit

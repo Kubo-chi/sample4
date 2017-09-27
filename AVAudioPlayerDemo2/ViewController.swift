@@ -1,10 +1,4 @@
-//
-//  ViewController.swift
-//  AVAudioPlayerDemo2
-//
-//  Created by KUWAJIMA MITSURU on 2015/09/20.
-//  Copyright © 2015年 nackpan. All rights reserved.
-//
+
 
 import UIKit
 import AVFoundation
@@ -20,8 +14,7 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
     //速さ
     
     
-    //@IBOutlet weak var volumeSlider0: UISlider!
-    //@IBOutlet weak var volumeSlider1: UISlider!
+    
     @IBOutlet var button :UIButton!
     
     var count = 0
@@ -118,7 +111,6 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
             audioPlayer1 = try? AVAudioPlayer(contentsOf: url1)
             
             if audioPlayer0 == nil || audioPlayer1 == nil {
-                // 再生できません
                 
                 return
             }
@@ -129,13 +121,11 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
                 // 曲目表示
                 songTitleLabel0.text = item0.title ?? ""
                 songTitleLabel1.text = item1.title ?? ""
-                                // 再生レート変更可能にする
+                
                 player0.enableRate = true
                 player1.enableRate = true
                 
-                // sliderに合わせてrateを変更
-                //player0.rate = playbackRateSlider0.value
-                //player1.rate = playbackRateSlider1.value
+                
                 motionManager.accelerometerUpdateInterval = 0.1
                 
                 
@@ -188,8 +178,7 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
             
 
         } else {
-            // urlがnilなので再生できない
-            // プレイヤーをnilとする
+            
             audioPlayer0 = nil
             audioPlayer1 = nil
         }
@@ -213,47 +202,6 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate {
     }
     
     
-    // MARK: Playback Rate Changed 速度
-
-    @IBAction func song0RateValueChanged(_ sender: AnyObject) {
-        let slider = sender as! UISlider
-        
-        if let player = audioPlayer0 {
-            player.rate = slider.value
-        }
-        
-
-    }
-    
-    @IBAction func song1RateValueChanged(_ sender: AnyObject) {
-        let slider = sender as! UISlider
-        
-        if let player = audioPlayer1 {
-            player.rate = slider.value
-        }
-    }
-    
-    // MARK: Volume Changed 音量
-    @IBAction func song0VolumeChanged(_ sender: AnyObject) {
-        let slider = sender as! UISlider
-        
-        if let player = audioPlayer0 {
-            player.volume = slider.value
-        }
-        
-    }
-    
-    @IBAction func song1VolumeChanged(_ sender: AnyObject) {
-        let slider = sender as! UISlider
-        
-        if let player = audioPlayer1 {
-            player.volume = slider.value
-        }
-    }
-    //@IBAction func song1volumeupdated(_ sender1: AnyObject){
-   //     let grave = sender1 as
-    //}
-    // MARK: Play, Pause, Stop
     
     
     @IBAction func playBtnTapped(_ sender: AnyObject) {

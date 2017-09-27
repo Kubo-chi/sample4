@@ -1,10 +1,4 @@
-//
-//  AVAudioPlayerDemo2Tests.swift
-//  AVAudioPlayerDemo2Tests
-//
-//  Created by KUWAJIMA MITSURU on 2015/09/20.
-//  Copyright © 2015年 nackpan. All rights reserved.
-//
+
 
 import XCTest
 @testable import AVAudioPlayerDemo2
